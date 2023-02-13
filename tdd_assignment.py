@@ -24,3 +24,5 @@ class LargestSubarrayWith0Sum:
     def largestSubarryWith0Sum(self,input_values):
         if(input_values[0]==1 and input_values[1][0]!=0):
             return -1
+        elif(input_values[0]==1 and input_values[1][0]==0):
+            return [0,0]

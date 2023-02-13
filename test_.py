@@ -31,6 +31,13 @@ class TestLargestSubarryWith0Sum:
         with pytest.raises(Exception):
             object.getInputValues(mock_file)
     
-    def test_one_value_no_ans(self,object,mock_file):
+    def test_one_value_no_ans(self,object):
         input_values=[1,[4]]
         assert object.largestSubarryWith0Sum(input_values)==-1
+    
+    def test_one_value_with_ans(self,object):
+        input_values=[1,[0]]
+        expected=[0,0]
+        ans=object.largestSubarryWith0Sum(input_values)
+        assert len(expected) == len(ans)
+        assert all([a == b for a, b in zip(expected, ans)])
