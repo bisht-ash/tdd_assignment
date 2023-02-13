@@ -11,6 +11,8 @@ class LargestSubarrayWith0Sum:
         input_values=[]
         input_values.append(int(input_list[0]))
         temp=[]
+        if(len(input_list)==1):
+            raise Exception("Invalid Input")
         temp=input_list[1].split(' ')
         #type casting the second row of input to int
         for i in range(len(temp)):

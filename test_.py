@@ -21,8 +21,12 @@ class TestLargestSubarryWith0Sum:
         mock_file.read.return_value='4\n5 -4 1 5'
         assert object.getInputValues(mock_file)==[4,[5,-4,1,5]]
     
-    def test_valid_input_empty(slef,object,mock_file):
+    def test_invalid_input_empty(self,object,mock_file):
         mock_file.read.return_value=''
         with pytest.raises(Exception):
             object.getInputValues(mock_file)
         
+    def test_invalid_input(self,object,mock_file):
+        mock_file.read.return_value='4'
+        with pytest.raises(Exception):
+            object.getInputValues(mock_file)
