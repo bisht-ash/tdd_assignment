@@ -1,12 +1,21 @@
 class LargestSubarrayWith0Sum:
+    # opening the file
     def readFromFile(self,path):
         return open(path,'r')
+    
     def getInputValues(self,file):
+        #read the data from the file
         input_list=file.read().split('\n')
+        if(len(input_list)==0):
+            raise Exception("Empty Input")
         input_values=[]
         input_values.append(int(input_list[0]))
+        temp=[]
         temp=input_list[1].split(' ')
+        #type casting the second row of input to int
         for i in range(len(temp)):
             temp[i]=int(temp[i])
         input_values.append(temp)
         return input_values
+    
+        

@@ -20,3 +20,9 @@ class TestLargestSubarryWith0Sum:
     def test_can_type_cast_input(self,object,mock_file):
         mock_file.read.return_value='4\n5 -4 1 5'
         assert object.getInputValues(mock_file)==[4,[5,-4,1,5]]
+    
+    def test_valid_input_empty(slef,object,mock_file):
+        mock_file.read.return_value=''
+        with pytest.raises(Exception):
+            object.getInputValues(mock_file)
+        
