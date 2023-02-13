@@ -7,11 +7,16 @@ class TestLargestSubarryWith0Sum:
     def object(self):
         obj=LargestSubarrayWith0Sum()
         return obj
-    
-    def test_can_read_from_file(self,object):
-        path="shhs"
+    @pytest.fixture
+    def mock_file(self):
         mock_file=MagicMock()
+        return mock_file
+    
+    def test_can_read_from_file(self,object,mock_file):
+        path="shhs"
         with unittest.mock.patch('builtins.open',return_value=mock_file):
             assert object.readFromFile(path)==mock_file
 
-
+    def test_can_extract_from_file(self,object,mock_file):
+        mock_file.read.return_value='4\n5 -4 1 5'
+        assert object.getInputValues(mock_file)=='4\n5 -4 1 5'
