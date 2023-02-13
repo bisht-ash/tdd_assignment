@@ -1,2 +1,3 @@
 class LargestSubarrayWith0Sum:
-    pass
+    def readFromFile(self,path):
+        return open(path)
