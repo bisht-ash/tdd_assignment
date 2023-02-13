@@ -47,3 +47,9 @@ class TestLargestSubarryWith0Sum:
         input_values=[3,[2,4,5]]
         expected=0
         assert object.largestSubarryWith0Sum(input_values)==expected
+    
+    def test_many_values_with_ans(self,object):
+        assert object.largestSubarryWith0Sum([5,[-1,9,10,-17,-2]])==4
+        assert object.largestSubarryWith0Sum([5,[0,0,0,0,0]])==5
+        assert object.largestSubarryWith0Sum([5,[1,2,3,4,5]])==0
+        assert object.largestSubarryWith0Sum([6,[1,2,3,4,5,-5]])==2
