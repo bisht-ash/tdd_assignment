@@ -30,3 +30,7 @@ class TestLargestSubarryWith0Sum:
         mock_file.read.return_value='4'
         with pytest.raises(Exception):
             object.getInputValues(mock_file)
+    
+    def test_one_value_no_ans(self,object,mock_file):
+        input_values=[1,[4]]
+        assert object.largestSubarryWith0Sum(input_values)==-1
