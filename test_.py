@@ -33,7 +33,8 @@ class TestLargestSubarryWith0Sum:
     
     def test_one_value_no_ans(self,object):
         input_values=[1,[4]]
-        assert object.largestSubarryWith0Sum(input_values)==-1
+        expected=0
+        assert object.largestSubarryWith0Sum(input_values)==expected
     
     def test_one_value_with_ans(self,object):
         input_values=[1,[0]]
@@ -41,3 +42,8 @@ class TestLargestSubarryWith0Sum:
         ans=object.largestSubarryWith0Sum(input_values)
         assert len(expected) == len(ans)
         assert all([a == b for a, b in zip(expected, ans)])
+    
+    def test_many_values_with_no_ans(self,object):
+        input_values=[3,[2,4,5]]
+        expected=0
+        assert object.largestSubarryWith0Sum(input_values)==expected
