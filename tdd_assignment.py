@@ -25,7 +25,7 @@ class LargestSubarrayWith0Sum:
         if(input_values[0]==1 and input_values[1][0]!=0):
             return 0
         elif(input_values[0]==1 and input_values[1][0]==0):
-            return [0,0]
+            return 1
         else:
             map={}
             max_len = 0
@@ -46,7 +46,19 @@ class LargestSubarrayWith0Sum:
                     map[curr_sum] = i
 
             return max_len
+    
+    def solve(self):
+        path='input.txt'
+        file =self.readFromFile(path)
+        input_values=self.getInputValues(file)  
+        ans=self.largestSubarryWith0Sum(input_values)
+        print(ans);     
+       
+def main():
+    obj=LargestSubarrayWith0Sum()
+    obj.solve()
+         
             
-            
-            
-            
+
+if __name__=='__main__' :
+    main()         
